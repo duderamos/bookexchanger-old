@@ -14,7 +14,7 @@ RSpec.describe Book, type: :model do
     end
   end
 
-  it 'has invalid with isbn too small' do
+  it 'be invalid with isbn too small' do
     f = FactoryGirl.build(:book, isbn: 'asd')
     expect(f).to be_invalid
   end
