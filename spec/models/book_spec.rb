@@ -17,4 +17,12 @@ RSpec.describe Book, type: :model do
     expect(FactoryGirl.build(:book, isbn: 'asd')).to be_invalid
   end
 
+  it 'be invalid with negative page' do
+    expect(FactoryGirl.build(:book, pages: -1)).to be_invalid
+  end
+
+  it 'be invalid with page as zero' do
+    expect(FactoryGirl.build(:book, pages: 0)).to be_invalid
+  end
+
 end
