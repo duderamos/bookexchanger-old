@@ -9,14 +9,12 @@ RSpec.describe Book, type: :model do
   
   [ 'title', 'authors', 'isbn', 'publisher', 'published_date', 'language', 'pages', 'category_id', 'user_id' ].each do |attr|
     it "is invalid without a #{attr}" do
-      f = FactoryGirl.build(:book, "#{attr}": nil)
-      expect(f).to be_invalid
+      expect(FactoryGirl.build(:book, "#{attr}": nil)).to be_invalid
     end
   end
 
   it 'be invalid with isbn too small' do
-    f = FactoryGirl.build(:book, isbn: 'asd')
-    expect(f).to be_invalid
+    expect(FactoryGirl.build(:book, isbn: 'asd')).to be_invalid
   end
 
 end
