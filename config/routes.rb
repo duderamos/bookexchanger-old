@@ -3,5 +3,8 @@ Rails.application.routes.draw do
     get "/login" => "devise/sessions#new"
   end
   devise_for :users
+
+  resources :books
+
   root 'home#index'
 end
