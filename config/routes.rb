@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_scope :user do
-    get "/login" => "devise/sessions#new"
+    get '/login', to: 'devise/sessions#new'
+    get '/logout', to: 'devise/sessions#destroy'
   end
   devise_for :users
 
