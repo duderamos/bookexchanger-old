@@ -13,15 +13,15 @@ RSpec.describe Book, type: :model do
     end
   end
 
-  it 'be invalid with isbn too small' do
+  it 'is invalid with isbn too small' do
     expect(FactoryGirl.build(:book, isbn: 'asd')).to be_invalid
   end
 
-  it 'be invalid with negative page' do
+  it 'is invalid with negative page' do
     expect(FactoryGirl.build(:book, pages: -1)).to be_invalid
   end
 
-  it 'be invalid with page as zero' do
+  it 'is invalid with page as zero' do
     expect(FactoryGirl.build(:book, pages: 0)).to be_invalid
   end
 

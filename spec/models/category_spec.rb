@@ -1,19 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe Category, type: :model do
-  let(:c) { FactoryGirl.create(:category) }
+  let(:category) { FactoryGirl.create(:category) }
 
   it 'has a valid factory' do
-    expect(c).to be_valid
+    expect(category).to be_valid
   end
 
-  it 'be invalid without a name' do
+  it 'is invalid without a name' do
     category = FactoryGirl.build(:category, name: nil)
     expect(category).to be_invalid
   end
 
   it 'does not allow duplicated name' do
-    category = FactoryGirl.build(:category, name: c.name)
-    expect(category).to be_invalid
+    another_category = FactoryGirl.build(:category, name: category.name)
+    expect(another_category).to be_invalid
   end
 end
