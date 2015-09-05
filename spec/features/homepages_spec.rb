@@ -19,4 +19,10 @@ RSpec.feature "Homepages", type: :feature do
     click_on 'Log in'
     expect(page).to have_content 'Signed in successfully'
   end
+  context 'when visiting books page' do
+    it 'asks for log in' do
+      visit books_path
+      expect(page).to have_content 'You need to sign in or sign up before continuing'
+    end
+  end
 end
