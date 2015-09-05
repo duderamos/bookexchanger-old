@@ -1,2 +1,18 @@
-%h1 Books#show
-%p Find me in app/views/books/show.html.haml
+%h1
+  = @book.title
+
+%li
+  Authors
+  = @book.authors
+%li
+  = @book.isbn
+%li
+  = @book.publisher
+%li
+  = @book.published_date
+%li
+  = @book.language
+%li
+  = @book.category.name
+%li
+  = @book.user.email

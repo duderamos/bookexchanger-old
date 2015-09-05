@@ -1,0 +1,32 @@
+- if @book.errors.any?
+  - @book.errors.full_messages.each do |msg|
+    = msg
+
+= form_for @book do |f|
+  = f.hidden_field :user_id, value: current_user.id
+  .form-group
+    = f.label :title
+    = f.text_field :title
+  .form-group
+    = f.label :authors
+    = f.text_field :authors
+  .form-group
+    = f.label :isbn
+    = f.text_field :isbn
+  .form-group
+    = f.label :publisher
+    = f.text_field :publisher
+  .form-group
+    = f.label :published_date
+    = f.text_field :published_date
+  .form-group
+    = f.label :language
+    = f.text_field :language
+  .form-group
+    = f.label :pages
+    = f.text_field :pages
+  .form-group
+    =f.collection_select :category_id, Category.all.all, :id, :name, {}
+  .form-group
+    = f.submit 'Save', class: 'btn btn-default'
+    = link_to 'Cancel', :back, { class: 'btn btn-default' }
