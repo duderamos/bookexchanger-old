@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Book, type: :model do
-  let(:b) { FactoryGirl.create(:book) }
+  let(:book) { FactoryGirl.create(:book) }
 
   it 'has a valid factory' do
-    expect(b).to be_valid
+    expect(book).to be_valid
   end
   
   [ 'title', 'authors', 'isbn', 'publisher', 'published_date', 'language', 'pages', 'category_id', 'user_id' ].each do |attr|
