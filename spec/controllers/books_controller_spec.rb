@@ -80,4 +80,41 @@ RSpec.describe BooksController, type: :controller do
       end
     end
   end
+
+  describe 'PATCH #update' do
+    context 'when book exists' do
+      it 'updates book' do
+        patch :update, book: FactoryGirl.attributes_for(:book), id: book.id
+        expect(response).to redirect_to book_path(book.id)
+      end
+    end
+    context 'when gets invalid values' do
+      it 'fails to update' do
+        patch :update, book: FactoryGirl.attributes_for(:book, title: nil), id: book.id
+        expect(response).to render_template :edit
+      end
+    end
+  end
+
+  describe 'DELETE #destroy' do
+    context 'when book exists' do
+      it 'deletes book' do
+        expect {
+          delete :destroy, id: book.id
+        }.to_not change(Book, :count)
+      end
+      it 'redirects to #index' do
+        delete :destroy, id: book.id
+        expect(response).to redirect_to books_path
+      end
+    end
+
+    context 'when book does not exist' do
+      it 'fails to delete' do
+        expect {
+          delete :destroy, id: -1
+        }.to raise_exception ActiveRecord::RecordNotFound
+      end
+    end
+  end
 end
