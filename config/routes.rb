@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   end
   devise_for :users
 
-  resources :books
+  resources :books do
+    member do
+      get 'wish'
+    end
+  end
 
   root 'home#index'
 end

@@ -42,6 +42,14 @@ class BooksController < ApplicationController
     redirect_to books_path
   end
 
+  def wish
+    book = Book.find(params[:id])
+    user = current_user
+
+    BookNotifier.wish(user, book).deliver_later(wait: 5.seconds)
+    redirect_to books_path
+  end
+
   private
     def book_params
       params.require(:book).permit(:title, :authors, :isbn, :publisher, :published_date, :language, :pages, :category_id, :user_id, :cover)

@@ -1,0 +1,8 @@
+%p
+  Dear #{@book.user.email},
+%p
+  Our fellow reader #{@user.email} is interested on your book:
+  %strong
+    = @book.title
+%p
+  It's your turn. Write him or just reply this message to get in touch.
