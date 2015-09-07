@@ -1,6 +1,8 @@
 %h1
   = @book.title
 
+%div
+  = image_tag @book.cover.normal.url
 %li
   Authors
   = @book.authors
@@ -16,3 +18,6 @@
   = @book.category.name
 %li
   = @book.user.email
+
+- if @book.user_id == current_user.id
+  = link_to 'Delete', book_path(@book.id), method: :delete, data: { confirm: 'Are you sure?' }

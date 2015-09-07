@@ -26,7 +26,10 @@
     = f.label :pages
     = f.text_field :pages
   .form-group
-    =f.collection_select :category_id, Category.all.all, :id, :name, {}
+    = f.collection_select :category_id, Category.all.all, :id, :name, {}
+  .form-group
+    = f.label :cover
+    = f.file_field :cover
   .form-group
     = f.submit 'Save', class: 'btn btn-default'
     = link_to 'Cancel', :back, { class: 'btn btn-default' }
