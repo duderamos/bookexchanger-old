@@ -13,6 +13,7 @@
   .form-group
     = f.label :isbn
     = f.text_field :isbn
+    = button_tag 'Get from Google Books', type: 'button', id: 'getgooglebooks'
   .form-group
     = f.label :publisher
     = f.text_field :publisher
