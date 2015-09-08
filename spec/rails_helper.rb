@@ -16,5 +16,6 @@ RSpec.configure do |config|
   config.include Capybara::DSL
   config.mock_with :rspec
   config.include FactoryGirl::Syntax::Methods
-  config.include Devise::TestHelpers, :type => :controller
+  config.include Devise::TestHelpers, type: :controller
+  config.include Devise::TestHelpers, type: :view
 end
