@@ -1,19 +1,19 @@
-$(document).ready ->
+$ ->
   $('#getgooglebooks').click ->
     isbn = $('#book_isbn').val()
-    if isbn == ''
+
+    if isbn is ''
       alert 'ISBN cannot be empty'
-      return
-    $.getJSON 'https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbn, (response) ->
-      if response.totalItems == 0
-        alert 'No book found'
-        return
-      $('#book_title').val response.items[0].volumeInfo.title
-      $('#book_authors').val response.items[0].volumeInfo.authors[0]
-      $('#book_publisher').val response.items[0].volumeInfo.publisher
-      $('#book_published_date').val response.items[0].volumeInfo.publishedDate
-      $('#book_language').val response.items[0].volumeInfo.language
-      $('#book_pages').val response.items[0].volumeInfo.pageCount
-      return
-    return
-  return
+    else
+      $.getJSON 'https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbn, (response) ->
+        if response.totalItems == 0
+          alert 'No book found'
+        else
+          volumeInfo = response.items[0].volumeInfo
+
+          $('#book_title').val          volumeInfo.title
+          $('#book_authors').val        volumeInfo.authors[0]
+          $('#book_publisher').val      volumeInfo.publisher
+          $('#book_published_date').val volumeInfo.publishedDate
+          $('#book_language').val       volumeInfo.language
+          $('#book_pages').val          volumeInfo.pageCount
