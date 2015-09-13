@@ -25,4 +25,18 @@ RSpec.describe Book, type: :model do
     expect(FactoryGirl.build(:book, pages: 0)).to be_invalid
   end
 
+  context 'when searching for a existent book' do
+    it 'finds the book' do
+      title = book.title
+      books = Book.search(title)
+      expect(books).to match_array([book])
+    end
+  end
+
+  context 'when searching for a inexistent book' do
+    it 'does not find the book' do
+      books = Book.search('Foo Bar')
+      expect(books).to match_array([])
+    end
+  end
 end
