@@ -1,4 +1,4 @@
-$ ->
+ready = ->
   $('#getgooglebooks').click ->
     isbn = $('#book_isbn').val()
 
@@ -17,3 +17,6 @@ $ ->
           $('#book_published_date').val volumeInfo.publishedDate
           $('#book_language').val       volumeInfo.language
           $('#book_pages').val          volumeInfo.pageCount
+
+$(document).ready ready
+$(document).on 'page:load', ready
