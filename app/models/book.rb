@@ -7,4 +7,8 @@ class Book < ActiveRecord::Base
   validates :pages, numericality: { only_integer: true, greater_than: 0 }
 
   mount_uploader :cover, CoverUploader
+
+  def self.search(search)
+    where('title like ?', "%#{search}%")
+  end
 end

@@ -1,5 +1,8 @@
 %h1 Books
 
+= form_tag books_path, method: 'get', id: 'search-form' do
+  = text_field_tag :search, params[:search], placeholder: 'Search books'
+  = submit_tag 'Search', name: nil
 = link_to 'New', new_book_path
 
 %table
