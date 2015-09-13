@@ -1,9 +1,9 @@
 class BooksController < ApplicationController
   def index
     if params[:search]
-      @books = Book.search(params[:search]).order('created_at DESC')
+      @books = Book.search(params[:search]).order('created_at DESC').paginate(page: params[:page])
     else
-      @books = Book.all.order('created_at DESC')
+      @books = Book.order('created_at DESC').paginate(page: params[:page])
     end
   end
 

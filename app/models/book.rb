@@ -8,6 +8,8 @@ class Book < ActiveRecord::Base
 
   mount_uploader :cover, CoverUploader
 
+  self.per_page = 8
+
   def self.search(search)
     where('title like ?', "%#{search}%")
   end
