@@ -1,0 +1,7 @@
+en:
+  book_notifier:
+    wish:
+      greeting: 'Dear %{owner}'
+      message: 'Our fellow reader %{user} is interested on your book:'
+      conclusion: "It's your turn. Write him or just reply this message to get in touch."
+

@@ -1,0 +1,6 @@
+pt-BR:
+  book_notifier:
+    wish:
+      greeting: 'Prezado %{owner}'
+      message: 'Nosso colega leitor %{user} está interessado no seu livro:'
+      conclusion: 'É a sua vez. Escreva para ele ou apenas responda essa mensagem para fazer contato'
