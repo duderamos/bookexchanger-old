@@ -7,13 +7,16 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
+    = language_selector
+    //= link_to_unless I18n.locale == :en, 'English', locale: :en
+    //= link_to_unless I18n.locale == :"pt-BR", 'Portugues', locale: :"pt-BR"
     - if current_user
-      Logged as
+      = t '.logged_as'
       = current_user.email
-      = link_to 'Books', books_path
-      = link_to 'Log out', logout_path
+      = link_to t('activerecord.models.book'), books_path
+      = link_to t('.logout'), logout_path
     - else
-      = link_to 'Log in', login_path
+      = link_to t('.login'), login_path
     %p.notice
       = notice
     %p.alert

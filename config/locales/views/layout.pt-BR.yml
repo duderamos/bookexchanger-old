@@ -1,0 +1,6 @@
+pt-BR:
+  layouts:
+    application:
+      logged_as: 'Logado como'
+      login: 'Entrar'
+      logout: 'Sair'

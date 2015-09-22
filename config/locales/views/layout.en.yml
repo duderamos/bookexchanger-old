@@ -1,0 +1,6 @@
+en:
+  layouts:
+    application:
+      logged_as: 'Logged as'
+      login: 'Log in'
+      logout: 'Log out'
