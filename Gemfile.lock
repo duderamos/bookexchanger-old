@@ -131,6 +131,9 @@ GEM
       i18n (~> 0.5)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    globalize (4.0.3)
+      activemodel (>= 4.0.0, < 5)
+      activerecord (>= 4.0.0, < 5)
     haml (4.0.7)
       tilt
     haml-rails (0.9.0)
@@ -295,6 +298,7 @@ DEPENDENCIES
   devise-i18n
   factory_girl_rails
   faker
+  globalize (~> 4.0.2)
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
