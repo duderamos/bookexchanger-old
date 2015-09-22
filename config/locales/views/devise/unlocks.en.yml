@@ -1,0 +1,5 @@
+en:
+  devise:
+    unlocks:
+      new:
+        resend_unlock: 'Resend unlock instructions'

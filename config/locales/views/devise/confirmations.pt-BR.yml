@@ -1,0 +1,5 @@
+pt-BR:
+  devise:
+    confirmations:
+      new:
+        resend_confirmation: 'Reenviar instruções de confirmação'

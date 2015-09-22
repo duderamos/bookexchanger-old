@@ -1,0 +1,5 @@
+pt-BR:
+  devise:
+    unlocks:
+      new:
+        resend_unlock: 'Reenviar instruções para desbloqueio'

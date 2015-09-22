@@ -1,0 +1,14 @@
+en:
+  devise:
+    registrations:
+      new:
+        signup: 'Sign up'
+      edit:
+        confirm: 'Are you sure?'
+        title: 'Edit %{user}'
+        cancel_account: 'Cancel my account'
+        unhappy: 'Unhappy?'
+        back: 'back'
+        leave_password_blank: "(leave blank if you don't want to change it)"
+        confirm_password: '(we need your current password to confirm your changes)'
+        current_password: 'Current password'

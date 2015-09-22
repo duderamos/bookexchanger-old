@@ -1,0 +1,10 @@
+pt-BR:
+  devise:
+    shared:
+      links:
+        login: 'Entrar'
+        signup: 'Cadastrar'
+        forgot_password: 'Esqueceu sua senha?'
+        receive_confirmation: "Não recebeu as instruções de confirmação?"
+        receive_unlock: "Não recebeu as instruções de desbloqueio?"
+        signin_with: "Entre com %{provider}"

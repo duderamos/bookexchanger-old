@@ -1,0 +1,13 @@
+pt-BR:
+  devise:
+    registrations:
+      new:
+        signup: 'Cadastrar'
+      edit:
+        confirm: 'Tem certeza?'
+        title: 'Editar %{user}'
+        cancel_account: 'Cancelar minha conta'
+        unhappy: 'Não gostou?'
+        back: 'voltar'
+        leave_password_blank: "(deixe em branco se não quiser trocá-la)"
+        confirm_password: '(nós precisamos de sua senha atual para confirmar as alterações)'
