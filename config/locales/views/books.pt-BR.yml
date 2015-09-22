@@ -1,0 +1,24 @@
+pt-BR:
+  books:
+    index:
+      title: 'Livros'
+      add_book: 'Publicar um livro'
+      search_box: 'Busque livros'
+      search_button: 'Buscar'
+    new:
+      title: 'Novo livro'
+    show:
+      authors: 'Autores:'
+      category: 'Categoria:'
+      isbn: 'ISBN:'
+      language: 'Idioma:'
+      owner: 'Proprietário:'
+      published_date: 'Data de publicação:'
+      publisher: 'Editora:'
+      title: 'Título:'
+      confirm: 'Tem certeza?'
+      delete_button: 'Deletar'
+      wish_button: 'Eu desejo'
+    form:
+      cancel: 'Cancelar'
+      get_from_google_books: 'Completar com Google Books'

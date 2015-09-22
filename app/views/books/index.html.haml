@@ -1,16 +1,12 @@
-%h1 Books
+%h1
+  = t '.title'
 
 = form_tag books_path, method: 'get', id: 'search-form' do
-  = text_field_tag :search, params[:search], placeholder: 'Search books'
-  = submit_tag 'Search', name: nil
-= link_to 'New', new_book_path
+  = text_field_tag :search, params[:search], placeholder: t('.search_box')
+  = submit_tag t('.search_button'), name: nil
+= link_to t('.add_book'), new_book_path
 
 %table
-  %tr
-    %td
-      Title
-    %td
-      Authors
   - @books.each do |book|
     %tr
       %td

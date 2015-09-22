@@ -4,22 +4,28 @@
 %div
   = image_tag @book.cover.normal.url
 %li
-  Authors
+  = t('.authors')
   = @book.authors
 %li
+  = t('.isbn')
   = @book.isbn
 %li
+  = t('.publisher')
   = @book.publisher
 %li
+  = t('.published_date')
   = @book.published_date
 %li
+  = t('.language')
   = @book.language
 %li
+  = t('.category')
   = @book.category.name
 %li
+  = t('.owner')
   = @book.user.email
 
 - if @book.user_id == current_user.id
-  = link_to 'Delete', book_path(@book.id), method: :delete, data: { confirm: 'Are you sure?' }
+  = link_to t('.delete_button'), book_path(@book.id), method: :delete, data: { confirm: t('.confirm') }
 - else
-  = link_to 'Wish', wish_book_path(@book.id)
+  = link_to t('.wish_button'), wish_book_path(@book.id)

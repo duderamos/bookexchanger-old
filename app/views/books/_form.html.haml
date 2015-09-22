@@ -13,7 +13,7 @@
   .form-group
     = f.label :isbn
     = f.text_field :isbn
-    = button_tag 'Get from Google Books', type: 'button', id: 'getgooglebooks'
+    = button_tag t('.get_from_google_books'), type: 'button', id: 'getgooglebooks'
   .form-group
     = f.label :publisher
     = f.text_field :publisher
@@ -27,10 +27,11 @@
     = f.label :pages
     = f.text_field :pages
   .form-group
+    = f.label :category
     = f.collection_select :category_id, Category.all.all, :id, :name, {}
   .form-group
     = f.label :cover
     = f.file_field :cover
   .form-group
-    = f.submit 'Save', class: 'btn btn-default'
-    = link_to 'Cancel', :back, { class: 'btn btn-default' }
+    = f.submit class: 'btn btn-default'
+    = link_to t('.cancel'), :back, { class: 'btn btn-default' }
