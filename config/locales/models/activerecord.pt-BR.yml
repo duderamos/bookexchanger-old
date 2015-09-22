@@ -1,0 +1,21 @@
+pt-BR:
+  activerecord:
+    models:
+      book: 'Livro'
+    attributes:
+      book:
+        title: 'Título'
+        authors: 'Autores'
+        isbn: 'ISBN'
+        publisher: 'Editora'
+        published_date: 'Data de publicação'
+        language: 'Idioma'
+        pages: 'Páginas'
+        cover: 'Capa'
+        category: 'Categoria'
+      user:
+        email: 'E-mail'
+        password: 'Senha'
+        password_confirmation: 'Confirmação de senha'
+        remember_me: 'Lembre-me'
+        current_password: 'Senha atual'

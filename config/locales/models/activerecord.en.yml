@@ -1,0 +1,15 @@
+en:
+  activerecord:
+    models:
+      book: 'Book'
+    attributes:
+      book:
+        title: 'Title'
+        authors: 'Authors'
+        isbn: 'ISBN'
+        publisher: 'Publisher'
+        published_date: 'Published date'
+        language: 'Language'
+        pages: 'Pages'
+        cover: 'Cover'
+        category: 'Category'
