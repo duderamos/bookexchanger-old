@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150907030219) do
+ActiveRecord::Schema.define(version: 20150922024507) do
 
   create_table "books", force: :cascade do |t|
     t.string   "title"
@@ -38,6 +38,17 @@ ActiveRecord::Schema.define(version: 20150907030219) do
   end
 
   add_index "categories", ["name"], name: "index_categories_on_name", unique: true
+
+  create_table "category_translations", force: :cascade do |t|
+    t.integer  "category_id", null: false
+    t.string   "locale",      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+  end
+
+  add_index "category_translations", ["category_id"], name: "index_category_translations_on_category_id"
+  add_index "category_translations", ["locale"], name: "index_category_translations_on_locale"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
