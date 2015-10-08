@@ -8,8 +8,6 @@
     = csrf_meta_tags
   %body
     = language_selector
-    //= link_to_unless I18n.locale == :en, 'English', locale: :en
-    //= link_to_unless I18n.locale == :"pt-BR", 'Portugues', locale: :"pt-BR"
     - if current_user
       = t '.logged_as'
       = current_user.email
