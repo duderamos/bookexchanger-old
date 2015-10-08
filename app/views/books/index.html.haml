@@ -4,7 +4,9 @@
 = form_tag books_path, method: 'get', id: 'search-form' do
   = text_field_tag :search, params[:search], placeholder: t('.search_box')
   = submit_tag t('.search_button'), name: nil
-= link_to t('.add_book'), new_book_path
+
+- if policy(Book).new?
+  = link_to t('.add_book'), new_book_path
 
 %table
   - @books.each do |book|

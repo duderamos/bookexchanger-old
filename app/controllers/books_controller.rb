@@ -1,4 +1,6 @@
 class BooksController < ApplicationController
+  before_filter :authenticate_user!, except: [:index, :show]
+
   def index
     if params[:search]
       @books = Book.search(params[:search]).order('created_at DESC').paginate(page: params[:page])
@@ -22,6 +24,8 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
 
+    authorize @book
+
     if @book.save
       flash[:notice] = t 'books.flash.create.success'
       redirect_to @book
@@ -33,6 +37,8 @@ class BooksController < ApplicationController
 
   def update
     @book = Book.find(params[:id])
+
+    authorize @book
 
     if @book.update(book_params)
       flash[:notice] = t 'books.flash.update.success'
@@ -46,6 +52,8 @@ class BooksController < ApplicationController
   def destroy
     @book = Book.find(params[:id])
 
+    authorize @book
+
     @book.remove_cover!
     @book.destroy
     flash[:notice] = t 'books.flash.deleted'
@@ -55,6 +63,8 @@ class BooksController < ApplicationController
   def wish
     book = Book.find(params[:id])
     user = current_user
+
+    authorize book
 
     BookNotifier.wish(user, book).deliver_later(wait: 5.seconds)
     flash[:notice] = t 'books.flash.notification'
