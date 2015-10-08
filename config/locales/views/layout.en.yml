@@ -1,6 +1,11 @@
 en:
   layouts:
-    application:
+    nav:
+      catalog: 'Catalog'
       logged_as: 'Logged as'
       login: 'Log in'
       logout: 'Log out'
+      signin: 'Sign in'
+      search:
+        placeholder: 'Search for books'
+        button: 'Search'

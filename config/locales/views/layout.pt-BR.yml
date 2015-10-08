@@ -1,6 +1,11 @@
 pt-BR:
   layouts:
-    application:
+    nav:
+      catalog: 'Catálogo'
       logged_as: 'Logado como'
       login: 'Entrar'
       logout: 'Sair'
+      signin: 'Registrar'
+      search:
+        placeholder: 'Busque livros'
+        button: 'Buscar'
