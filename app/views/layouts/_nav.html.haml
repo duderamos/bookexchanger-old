@@ -4,13 +4,14 @@
       = link_to 'Bookexchanger', root_path, class: 'navbar-brand'
     #navbar.collapse.navbar-collapse
       %ul.nav.navbar-nav
-        %li
-          = link_to t('.catalog'), books_path
       = form_tag books_path, method: :get, class: 'navbar-form navbar-left' do
         .input-group.input-group-sm
+          %span.input-group-btn
+            = link_to t('.catalog'), books_path, class: 'btn btn-primary'
           = text_field_tag :search, params[:search], placeholder: t('.search.placeholder'), class: 'form-control'
           %span.input-group-btn
-            = submit_tag t('.search.button'), name: nil, class: 'btn btn-sm btn-default'
+            = submit_tag t('.search.button'), name: nil, class: 'btn btn-success'
+            = link_to 'Publish!', new_book_path, class: 'btn btn-primary' if policy(Book).new?
       - if user_signed_in?
         %ul.nav.navbar-nav.navbar-right
           //= language_selector
@@ -22,5 +23,5 @@
               = link_to t('.logout'), logout_path
       - else
         .navbar-form.navbar-right
-          = link_to t('.signin'), new_user_registration_path, class: 'btn btn-sm btn-success'
-          = link_to t('.login'), new_user_session_path, class: 'btn btn-sm btn-success'
+          = link_to t('.signin'), new_user_registration_path, class: 'btn btn-sm btn-primary'
+          = link_to t('.login'), new_user_session_path, class: 'btn btn-sm btn-primary'
