@@ -12,6 +12,10 @@ Rails.application.routes.draw do
       end
     end
 
+    authenticated do
+      root to: 'books#index', as: :authenticated
+    end
+
     root 'home#index'
   end
 end
