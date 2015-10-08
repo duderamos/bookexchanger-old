@@ -1,0 +1,8 @@
+en:
+  pundit:
+    default: 'You are not authorized to perform this action.'
+    book_policy:
+      new?: 'You are not authorized to add new book.'
+      edit?: 'You are not authorized to edit this book.'
+      destroy?: 'You are not authorized to delete this book.'
+      wish?: 'You are not authorized to wish books.'

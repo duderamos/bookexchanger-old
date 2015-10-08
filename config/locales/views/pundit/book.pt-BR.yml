@@ -1,0 +1,8 @@
+en:
+  pundit:
+    default: 'Você não está autorizado à realizar esta ação.'
+    book_policy:
+      new?: 'Você não está autorizado à adicionar um novo livro.'
+      edit?: 'Você não está autorizado à editar este livro.'
+      destroy?: 'Você não está autorizado à deletar este livro.'
+      wish?: 'Você não está autorizado à desejar livros.'
