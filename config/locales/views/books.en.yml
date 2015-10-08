@@ -22,3 +22,12 @@ en:
     form:
       cancel: 'Cancel'
       get_from_google_books: 'Get from Google Books'
+    flash:
+      notification: 'Notification of your interest wat sent to the owner.'
+      deleted: 'Book deleted'
+      create:
+        success: 'Book created successfully.'
+        fail: 'It was not possible to create this book.'
+      update:
+        success: 'Book updated successfully.'
+        fail: 'It was not possible to update this book.'

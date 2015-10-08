@@ -22,3 +22,12 @@ pt-BR:
     form:
       cancel: 'Cancelar'
       get_from_google_books: 'Completar com Google Books'
+    flash:
+      notification: 'Notificação de interesse enviada para o dono.'
+      deleted: 'Livro deletado'
+      create:
+        success: 'Livro criado com sucesso.'
+        fail: 'Não foi possível criar este livro.'
+      update:
+        success: 'Livro atualizado com sucesso.'
+        fail: 'Não foi possível alterar este livro.'

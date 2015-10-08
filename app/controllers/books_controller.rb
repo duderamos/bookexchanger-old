@@ -23,10 +23,10 @@ class BooksController < ApplicationController
     @book = Book.new(book_params)
 
     if @book.save
-      flash[:notice] = 'Book created successfully!'
+      flash[:notice] = t 'books.flash.create.success'
       redirect_to @book
     else
-      flash[:alert] = 'It was not possible create this book.'
+      flash[:alert] = t 'books.flash.create.fail'
       render 'new'
     end
   end
@@ -35,10 +35,10 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
 
     if @book.update(book_params)
-      flash[:notice] = 'Book updated successfully!'
+      flash[:notice] = t 'books.flash.update.success'
       redirect_to @book
     else
-      flash[:alert] = 'It was not possible update this book.'
+      flash[:alert] = t 'books.flash.update.fail'
       render 'edit'
     end
   end
@@ -48,7 +48,7 @@ class BooksController < ApplicationController
 
     @book.remove_cover!
     @book.destroy
-    flash[:notice] = 'Book deleted'
+    flash[:notice] = t 'books.flash.deleted'
     redirect_to books_path
   end
 
@@ -57,7 +57,7 @@ class BooksController < ApplicationController
     user = current_user
 
     BookNotifier.wish(user, book).deliver_later(wait: 5.seconds)
-    flash[:notice] = 'Notification of your interest was sent to the owner.'
+    flash[:notice] = t 'books.flash.notification'
     redirect_to books_path
   end
 
