@@ -7,16 +7,14 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    = language_selector
-    - if current_user
-      = t '.logged_as'
-      = current_user.email
-      = link_to t('activerecord.models.book'), books_path
-      = link_to t('.logout'), logout_path
-    - else
-      = link_to t('.login'), login_path
-    %p.notice
-      = notice
-    %p.alert
-      = alert
-    = yield
+    .container
+      = render 'layouts/nav'
+      - if notice
+        %p.notice.alert.alert-success
+          = notice
+      - if alert
+        %p.alert.alert-warning
+          = alert
+      = yield
+      %footer.footer
+        = render 'layouts/footer'
