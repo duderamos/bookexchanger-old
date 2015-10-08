@@ -1,2 +1,6 @@
-%h1
-  = t '.welcome'
+.jumbotron.welcome-cover
+  .tablerow
+    .introbox
+      %h1
+        = t '.welcome'
+      = simple_format t('.welcome_paragraph')
