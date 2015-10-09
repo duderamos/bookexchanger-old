@@ -2,8 +2,11 @@
   - @book.errors.full_messages.each do |msg|
     = msg
 
+#cover-image
+
 = form_for @book do |f|
   = f.hidden_field :user_id, value: current_user.id
+  = f.hidden_field :remote_cover_url
   .form-group
     = f.label :title
     = f.text_field :title
