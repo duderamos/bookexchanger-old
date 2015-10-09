@@ -11,6 +11,6 @@ class Book < ActiveRecord::Base
   self.per_page = 9
 
   def self.search(search)
-    where('title like ?', "%#{search}%")
+    where('title like ? or authors like ?', "%#{search}%", "%#{search}%")
   end
 end
