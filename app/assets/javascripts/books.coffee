@@ -23,3 +23,35 @@ ready = ->
 
 $(document).ready ready
 $(document).on 'page:load', ready
+
+window.myConfirmBox = (message, callback) ->
+  bootbox.dialog
+    message: message
+    class: 'class-confirm-box'
+    className: 'my-modal'
+    buttons:
+      success:
+        label: 'Yes'
+        className: 'btn-danger'
+        callback: -> callback()
+      fail:
+        label: 'No'
+        className: 'btn-success'
+
+$.rails.allowAction = (link) ->
+  message = link.data('confirm')
+  return true unless message
+
+  answer = false
+  callback = undefined
+
+  if $.rails.fire(link, 'confirm')
+    myConfirmBox message, ->
+      callback = $.rails.fire(link, 'confirm:complete', [answer])
+      if callback
+        oldAllowAction = $.rails.allowAction
+        $.rails.allowAction = ->
+          true
+        link.trigger 'click'
+        $.rails.allowAction = oldAllowAction
+  false
