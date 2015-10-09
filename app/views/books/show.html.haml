@@ -26,6 +26,6 @@
   = @book.user.email
 
 - if policy(@book).destroy?
-  = link_to t('.delete_button'), book_path(@book.id), method: :delete, data: { confirm: t('.confirm') }
+  = link_to t('.delete_button'), book_path(@book.id), method: :delete, data: { confirm: t('.confirm', title: @book.title) }
 - else
   = link_to t('.wish_button'), wish_book_path(@book.id)

@@ -16,7 +16,7 @@ en:
       published_date: 'Publication date:'
       publisher: 'Publisher:'
       title: 'Title:'
-      confirm: 'Are you sure?'
+      confirm: 'Do you really want to delete the book "%{title}"?'
       delete_button: 'Delete'
       wish_button: 'I wish'
     form:

@@ -16,7 +16,7 @@ pt-BR:
       published_date: 'Data de publicação:'
       publisher: 'Editora:'
       title: 'Título:'
-      confirm: 'Tem certeza?'
+      confirm: 'Você realmente quer deletar o livro "%{title}?"'
       delete_button: 'Deletar'
       wish_button: 'Eu desejo'
     form:
